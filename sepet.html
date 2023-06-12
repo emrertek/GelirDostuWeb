@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>GELİR DOSTU</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <style>
+    /* CSS stil kuralları */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .product-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .product-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .product-image {
+      width: 100px;
+      margin-right: 10px;
+    }
+
+    .product-details {
+      flex-grow: 1;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .product-price {
+      color: #888;
+    }
+
+    .product-quantity {
+      margin-right: 10px;
+      width: 30px;
+      text-align: center;
+    }
+
+    .delete-button {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .delete-button:hover {
+      background-color: #cc0000;
+    }
+
+    .total {
+      text-align: right;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    li.product {
+      display: flex;
+      gap: 20px;
+      padding: 15px;
+      background: #fff;
+      border-radius: 10px;
+      max-width: 50vw;
+      box-shadow: 3px 4px 5px #504a4a42;
+      margin-bottom: 5px;
+    }
+
+    .product img {
+      max-width: 85px;
+      border-radius: 7px;
+    }
+
+    button.btn {
+      padding: 9px;
+      line-height: 6px;
+      height: 30px;
+      margin: unset;
+    }
+
+    h3.product {
+      font-size: 16px;
+    }
+
+    li.product p {
+      font-size: 14px;
+      margin: unset;
+    }
+
+    .product-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      align-self: flex-start;
+    }
+
+    a.link-button.btn {
+      height: 25px;
+      line-height: 0px;
+      margin: unset;
+    }
+
+    .product-sub-container {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    #product-list-cart {
+      background: #fff;
+      border-radius: 7px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header section start -->
+
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="images/Se2logo.png" alt="logo" />
+    </a>
+    <nav class="navbar">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="populer.html">Popüler</a>
+      <a href="kategori.html">Kategoriler</a>
+      <a href="GDparam.html" class="active">GDparam</a>
+      <a href="GDyasam.html">GDyaşam</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="blogs.html">Blogs</a>
+    </nav>
+    <div class="buttons">
+      <button id="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+     
+
+      <button id="cart-btn">
+        <i class="fas fa-shopping-cart"></i>
+      </button>
+
+      <button id="rsp-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div class="search-form">
+      <input type="text" class="search-input" id="search-box" placeholder="Burdan Ara" />
+      <i class="fas fa-search"></i>
+    </div>
+  </header>
+
+  <!--header section end  -->
+
+
+  <h1>SEPETİM</h1>
+  <ul id="product-list-cart" class="product-list-cart"></ul>
+  
+  <div class="total" id="total">Toplam:$0</div>
+
+  <!--Sayfa Altı section Start  -->
+  <section class="footer">
+    <div class="search">
+      <input type="text" class="search-input" placeholder="search" />
+      <button class="btn btn-primary">Ara</button>
+    </div>
+    <div class="share">
+      <a href="https://www.facebook.com/" class="fab fa-facebook"></a>
+      <a href="https://www.twitter.com/" class="fab fa-twitter"></a>
+      <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+      <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+    </div>
+    <div class="links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="populer.html">Popüler</a>
+      <a href="kategori.html">Kategoriler</a>
+      <a href="GDparam.html">GDparam</a>
+      <a href="GDyasam.html">GDyaşam</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="blogs.html">Blogs</a>
+    </div>
+
+    <div class="credit">
+      TASARIMCI VE YÖNETİCİ <span>EMRE ERTEK</span> | Tüm hakları saklıdır.
+    </div>
+  </section>
+
+  <!--Sayfa Altı section end  -->
+
+  <script src="js/script.js"></script>
+  <script src="js/addJquery.js"></script>
+  <script src="js/sepet.js"></script>
+</body>
+
+</html>
